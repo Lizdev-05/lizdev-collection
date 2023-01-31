@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { addCart } from '../redux/action';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import React, { useState, useEffect } from "react";
+import { NavLink, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addCart } from "../redux/action";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const Product = () => {
   const { id } = useParams();
@@ -50,28 +50,26 @@ const Product = () => {
   const ShowProduct = () => (
     <>
       <div className="col-md-6">
-        <img src={product.image} alt={product.title} height="400px" width="400px" />
+        <img
+          src={product.image}
+          alt={product.title}
+          height="400px"
+          width="400px"
+        />
       </div>
       <div className="col-md-6">
-        <h4 className="text-uppercase text-secondary-50">
-          {product.category}
-        </h4>
+        <h4 className="text-uppercase text-secondary-50">{product.category}</h4>
         <h1 className="display-5">{product.title}</h1>
         <p className="lead fw-bolder">
-
           Rating:
-
           {product.rating && product.rating.rate}
           <span>⭐</span>
         </p>
-        <h3 className="display-6 fw-bold my-4">
-          $
-          {product.price}
-        </h3>
-        <p className="lead">
-          {product.description}
-        </p>
-        <button type="button" className="btn btn-outline-primary px-4 py-2">Add to Cart</button>
+        <h3 className="display-6 fw-bold my-4">${product.price}</h3>
+        <p className="lead">{product.description}</p>
+        <button type="button" className="btn btn-outline-primary px-4 py-2" onClick={()=>addProduct(product)}>
+          Add to Cart
+        </button>
         {/* <NavLink className="btn btn-outline-primary ms-2 px-3 py-2">
           Go to Cart
         </NavLink> */}
@@ -81,9 +79,7 @@ const Product = () => {
 
   return (
     <div className="container py-5">
-      <div className="row py-5">
-        {loading ? <Loading /> : <ShowProduct />}
-      </div>
+      <div className="row py-5">{loading ? <Loading /> : <ShowProduct />}</div>
     </div>
   );
 };
