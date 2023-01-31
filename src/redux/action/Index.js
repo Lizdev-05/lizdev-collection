@@ -7,3 +7,10 @@ export const addCart = (product) => {
     payload : product
   }
 }
+
+export const delItem = (product) {
+    return {
+        type : 'DELETE_ITEM',
+        payload : product
+    }
+}
