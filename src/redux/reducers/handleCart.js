@@ -22,7 +22,9 @@ const handleCart = (state = cart, action) => {
             } else {
                 // if the product is more than 1 in the cart, decrease the quantity
                 return state.map((p) => p.id === product.id ? {...p, quantity: p.quantity - 1} : p);
-            }
+            } break;
+        default:
+
 
         }
 }
