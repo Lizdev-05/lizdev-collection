@@ -19,6 +19,9 @@ const handleCart = (state = cart, action) => {
             if(itemExisting2.quantity === 1) {
                 // if the product is just 1 in the cart, remove it from the cart
                 return state.filter((p) => p.id !== product.id);
+            } else {
+                // if the product is more than 1 in the cart, decrease the quantity
+                return state.map((p) => p.id === product.id ? {...p, quantity: p.quantity - 1} : p);
             }
 
         }
