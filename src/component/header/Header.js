@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaSearch, FaMicrophone } from 'react-icons/fa';
 import { BsFillArrowRightSquareFill, BsCart4 } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 import { IoMdSettings } from 'react-icons/io';
 import { Container, Navbar } from 'react-bootstrap';
 import './Header.css';
@@ -10,7 +11,9 @@ const Header = () => (
     <Navbar expand="lg" variant="dark">
       <Container className="d-flex flex-sm-row justify-content-between">
         <h2>
-          <Navbar.Brand className="text-secondary" href="#">Lizdev Collection</Navbar.Brand>
+          <Link to="/">
+          <Navbar.Brand className="text-secondary">Lizdev Collection</Navbar.Brand> 
+          </Link>
         </h2>
         <div className="justify-content-center text-secondary mx-4 flex-wrap second">
           <a href="#search" className="text-secondary mx-3">
