@@ -9,6 +9,9 @@ const handleCart = (state = cart, action) => {
             if(itemExisting) {
                 // if the product is already in the cart, increase the quantity
                 return state.map((p) => p.id === product.id ? {...p, quantity: p.quantity + 1} : p);
-            }
+            } else {
+            // if the product is not in the cart, add it to the cart
+                return [...state, {...product, quantity: 1}];
+
 
 }
