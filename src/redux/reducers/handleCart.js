@@ -12,6 +12,14 @@ const handleCart = (state = cart, action) => {
             } else {
             // if the product is not in the cart, add it to the cart
                 return [...state, {...product, quantity: 1}];
+            } break;
+        case 'DELETE_ITEM':
+            // check if the product is already in the cart
+            const itemExisting2 = state.find((p) => p.id === product.id);
+            if(itemExisting2.quantity === 1) {
+                // if the product is just 1 in the cart, remove it from the cart
+                return state.filter((p) => p.id !== product.id);
+            }
 
-
+        }
 }
