@@ -31,7 +31,7 @@ const Cart = () => {
           <div className="row justify-content-center">
             <div className="col-md-4">
               <img
-                src={product.filename}
+                src={product.image}
                 alt={product.title}
                 height="200px"
                 width="180px"
@@ -40,7 +40,7 @@ const Cart = () => {
             <div className="col-md-4">
               <h3>{product.title}</h3>
               <p className="lead fw-bold">
-                {product.qty}
+                {product.quantity}
                 {' '}
                 X $
                 {product.price}

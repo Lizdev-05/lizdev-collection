@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { FaSearch, FaMicrophone } from 'react-icons/fa';
 import { BsFillArrowRightSquareFill, BsCart4 } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { IoMdSettings } from 'react-icons/io';
 import { Container, Navbar } from 'react-bootstrap';
 
@@ -27,11 +27,15 @@ const Header = () => {
             <IoMdSettings />
           </div>
           <div className="justify-content-end text-secondary mx-4 flex-wrap buttons">
-            <a href="cart" className="ms-2 btn btn-outline-dark">
-              <BsCart4 className="mx-2" />
+          <Link to="/cart" className="ms-2 btn btn-outline-dark">
+           <BsCart4 className="mx-2" />
               {state.length}
-            </a>
-            <a href="#cart" className="text-secondary ms-2 btn btn-outline-dark">
+            </Link>
+               {/* <NavLink to="/cart" className="btn btn-outline-dark ms-2">
+                <i className="fa fa-shopping-cart me-1"></i>
+                Cart ({state.length})
+              </NavLink> */}
+            <a href="/cart" className="text-secondary ms-2 btn btn-outline-dark">
               Login
               <BsFillArrowRightSquareFill className="mx-2" />
             </a>
