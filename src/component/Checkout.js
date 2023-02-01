@@ -36,7 +36,7 @@ const Checkout = () => {
     <div className="container">
       <main>
         <div className="row g-5">
-          <div className="col-md-5 col-lg-6 order-md-last">
+          <div className="col-md-7 col-lg-6 order-md-last">
             <h4 className="d-flex justify-content-between align-items-center mb-3">
               <span className="text-primary">Your cart</span>
               <span className="badge bg-primary rounded-pill">3</span>
@@ -48,7 +48,6 @@ const Checkout = () => {
                   <thead>
                     <tr>
                       <th scope="col">Product</th>
-                      <th scope="col">Description</th>
                       <th scope="col">Quantity</th>
                       <th scope="col">Price</th>
                     </tr>
@@ -60,11 +59,10 @@ const Checkout = () => {
                           <img
                             src={product.image}
                             alt={product.title}
-                            height="150px"
-                            width="150px"
+                            height="100px"
+                            width="100px"
                           />
                         </th>
-                        <td>{product.title}</td>
                         <td>{product.quantity}</td>
                         <td>#{product.price}</td>
                       </tr>
@@ -78,7 +76,7 @@ const Checkout = () => {
               </li>
             </ul>
           </div>
-          <div className="col-md-7 col-lg-6">
+          <div className="col-md-5 col-lg-6">
             <h4 className="mb-3">Billing address</h4>
             <form
               action=""
