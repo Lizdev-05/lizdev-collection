@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 /* eslint-disable */
-import { addCart } from '../redux/action/index';
+import { addCart } from "../redux/action/index";
 
 const Product = () => {
   const { id } = useParams();
@@ -66,12 +66,13 @@ const Product = () => {
           {product.rating && product.rating.rate}
           <span>⭐</span>
         </p>
-        <h3 className="display-6 fw-bold my-4">
-          $
-          {product.price}
-        </h3>
+        <h3 className="display-6 fw-bold my-4">#{product.price}</h3>
         <p className="lead">{product.description}</p>
-        <button type="button" className="btn btn-outline-primary px-4 py-2" onClick={() => addProduct(product)}>
+        <button
+          type="button"
+          className="btn btn-outline-primary px-4 py-2"
+          onClick={() => addProduct(product)}
+        >
           Add to Cart
         </button>
         {/* <NavLink className="btn btn-outline-primary ms-2 px-3 py-2">

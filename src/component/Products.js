@@ -38,28 +38,72 @@ const Products = () => {
   const ShowProducts = () => (
     <>
       <div className="button d-flex justify-content-center mb-5 bp-5">
-        <button type="button" className="btn btn-outline-primary me-2" onClick={() => setFilter(product)}>All</button>
-        <button type="button" className="btn btn-outline-primary me-2" onClick={() => filterProduct("men's clothing")}>Men&apos;s Clothing</button>
-        <button type="button" className="btn btn-outline-primary me-2" onClick={() => filterProduct("women's clothing")}>Women&apos;s Clothing</button>
-        <button type="button" className="btn btn-outline-primary me-2" onClick={() => filterProduct('jewelery')}>Jewelry</button>
-        <button type="button" className="btn btn-outline-primary me-2" onClick={() => filterProduct('electronics')}>Electronics</button>
+        <button
+          type="button"
+          className="btn btn-outline-primary me-2"
+          onClick={() => setFilter(product)}
+        >
+          All
+        </button>
+        <button
+          type="button"
+          className="btn btn-outline-primary me-2"
+          onClick={() => filterProduct("men's clothing")}
+        >
+          Men&apos;s Clothing
+        </button>
+        <button
+          type="button"
+          className="btn btn-outline-primary me-2"
+          onClick={() => filterProduct("women's clothing")}
+        >
+          Women&apos;s Clothing
+        </button>
+        <button
+          type="button"
+          className="btn btn-outline-primary me-2"
+          onClick={() => filterProduct('jewelery')}
+        >
+          Jewelry
+        </button>
+        <button
+          type="button"
+          className="btn btn-outline-primary me-2"
+          onClick={() => filterProduct('electronics')}
+        >
+          Electronics
+        </button>
       </div>
       {filter.map((data) => (
         <>
           <div className="col-md-3 mb-4">
-            <Card style={{ width: '18rem' }} className="h-100 text-center p-4" key="{data.id}">
-              <Card.Img src={data.image} className="card-img-top" height="250px" />
+            <Card
+              style={{ width: '18rem' }}
+              className="h-100 text-center p-4"
+              key="{data.id}"
+            >
+              <Card.Img
+                src={data.image}
+                className="card-img-top"
+                height="250px"
+              />
               <Card.Body>
                 <Card.Title className="mb-0">
                   {data.title.substring(0, 12)}
                   ...
                 </Card.Title>
                 <Card.Text className="lead fw-bold">
-                  $
+                  #
                   {data.price}
                 </Card.Text>
                 <Link to={`/products/${data.id}`}>
-                  <Button type="button" variant="primary" className="btn btn-outline-dark">Buy Now</Button>
+                  <Button
+                    type="button"
+                    variant="primary"
+                    className="btn btn-outline-dark"
+                  >
+                    Buy Now
+                  </Button>
                 </Link>
               </Card.Body>
             </Card>
@@ -74,7 +118,6 @@ const Products = () => {
       <div className="row justify-content-center">
         {loading ? <Loading /> : <ShowProducts />}
       </div>
-
     </div>
   );
 };

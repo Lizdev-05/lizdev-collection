@@ -15,8 +15,10 @@ const Header = () => {
       <Navbar expand="lg" variant="dark">
         <Container className="d-flex flex-sm-row justify-content-between">
           <h2>
-            <Link to="/">
-              <Navbar.Brand className="text-secondary">Lizdev Collection</Navbar.Brand>
+            <Link to="/" className="text-decoration-none">
+              <Navbar.Brand className="text-secondary">
+                Lizdev Collection
+              </Navbar.Brand>
             </Link>
           </h2>
           <div className="justify-content-center text-secondary mx-4 flex-wrap second">
@@ -27,11 +29,14 @@ const Header = () => {
             <IoMdSettings />
           </div>
           <div className="justify-content-end text-secondary mx-4 flex-wrap buttons">
-            <a href="cart" className="ms-2 btn btn-outline-dark">
+            <Link to="/cart" className="ms-2 btn btn-outline-dark">
               <BsCart4 className="mx-2" />
               {state.length}
-            </a>
-            <a href="#cart" className="text-secondary ms-2 btn btn-outline-dark">
+            </Link>
+            <a
+              href="/cart"
+              className="text-secondary ms-2 btn btn-outline-dark"
+            >
               Login
               <BsFillArrowRightSquareFill className="mx-2" />
             </a>

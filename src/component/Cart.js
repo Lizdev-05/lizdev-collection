@@ -1,11 +1,12 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 /* eslint-disable */
-import { addCart, delCart } from '../redux/action/index';
+import { addCart, delCart } from "../redux/action/index";
 
 const Cart = () => {
-  const state = useSelector((state) => state.handleCart);
+  const cart = useSelector((state) => state.handleCart);
   const dispatch = useDispatch();
 
   const handleAdd = (item) => {
@@ -16,7 +17,7 @@ const Cart = () => {
   };
 
   const emptyCart = () => (
-    <div className="px-4 my-5 bg-light rounded-3 py-5">
+    <div className="px-4 my-5 bg-light rounded-5 py-5">
       <div className="container py-4">
         <div className="row">
           <h3>Your Cart is Empty</h3>
@@ -26,12 +27,12 @@ const Cart = () => {
   );
   const cartItems = (product) => (
     <>
-      <div className="px-4 my-5 bg-light rounded-3 py-5">
+      <div className="px-4 my-5 bg-light rounded-5 py-5">
         <div className="container py-4">
           <div className="row justify-content-center">
             <div className="col-md-4">
               <img
-                src={product.filename}
+                src={product.image}
                 alt={product.title}
                 height="200px"
                 width="180px"
@@ -40,27 +41,22 @@ const Cart = () => {
             <div className="col-md-4">
               <h3>{product.title}</h3>
               <p className="lead fw-bold">
-                {product.qty}
-                {' '}
-                X $
-                {product.price}
-                {' '}
-                = $
-                {product.qty * product.price}
+                {product.quantity} X #{product.price} = #
+                {product.quantity * product.price}
               </p>
               <button
                 type="button"
                 className="btn btn-outline-dark me-4"
                 onClick={() => handleDel(product)}
               >
-                <i className="fa fa-minus" />
+                <AiOutlineMinus />
               </button>
               <button
                 type="button"
                 className="btn btn-outline-dark"
                 onClick={() => handleAdd(product)}
               >
-                <i className="fa fa-plus" />
+                <AiOutlinePlus />
               </button>
             </div>
           </div>
@@ -84,10 +80,10 @@ const Cart = () => {
   );
 
   return (
-    <div>
-      {state.length === 0 && emptyCart()}
-      {state.length !== 0 && state.map(cartItems)}
-      {state.length !== 0 && buttons()}
+    <div className=" mx-5">
+      {cart.length === 0 && emptyCart()}
+      {cart.length !== 0 && cart.map(cartItems)}
+      {cart.length !== 0 && buttons()}
     </div>
   );
 };
