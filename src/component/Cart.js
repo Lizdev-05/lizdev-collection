@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 /* eslint-disable */
 import { addCart, delCart } from '../redux/action/index';
 
@@ -16,7 +17,7 @@ const Cart = () => {
   };
 
   const emptyCart = () => (
-    <div className="px-4 my-5 bg-light rounded-3 py-5">
+    <div className="px-4 my-5 bg-light rounded-5 py-5">
       <div className="container py-4">
         <div className="row">
           <h3>Your Cart is Empty</h3>
@@ -26,7 +27,7 @@ const Cart = () => {
   );
   const cartItems = (product) => (
     <>
-      <div className="px-4 my-5 bg-light rounded-3 py-5">
+      <div className="px-4 my-5 bg-light rounded-5 py-5">
         <div className="container py-4">
           <div className="row justify-content-center">
             <div className="col-md-4">
@@ -53,14 +54,14 @@ const Cart = () => {
                 className="btn btn-outline-dark me-4"
                 onClick={() => handleDel(product)}
               >
-                <i className="fa fa-minus" />
+                <AiOutlineMinus />
               </button>
               <button
                 type="button"
                 className="btn btn-outline-dark"
                 onClick={() => handleAdd(product)}
               >
-                <i className="fa fa-plus" />
+                <AiOutlinePlus />
               </button>
             </div>
           </div>
@@ -84,7 +85,7 @@ const Cart = () => {
   );
 
   return (
-    <div>
+    <div className=' mx-5'>
       {state.length === 0 && emptyCart()}
       {state.length !== 0 && state.map(cartItems)}
       {state.length !== 0 && buttons()}
