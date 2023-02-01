@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+/* eslint-disable */
 import { addCart, delCart } from '../redux/action/index';
 
 const Cart = () => {
