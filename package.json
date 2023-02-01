@@ -13,6 +13,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-loading-skeleton": "^3.1.0",
+    "react-paystack": "^4.0.2",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.0",
     "react-scripts": "5.0.1",

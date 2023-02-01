@@ -7,3 +7,12 @@ export const delCart = (product) => ({
   type: 'DELETE_ITEM',
   payload: product,
 });
+
+export const removeFromCart = (id) => {
+  return {
+    type: actionType.REMOVE_FROM_CART,
+    payload: {
+      id,
+    },
+  };
+};

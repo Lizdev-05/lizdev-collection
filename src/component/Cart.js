@@ -6,7 +6,7 @@ import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { addCart, delCart } from '../redux/action/index';
 
 const Cart = () => {
-  const state = useSelector((state) => state.handleCart);
+  const cart = useSelector((state) => state.handleCart);
   const dispatch = useDispatch();
 
   const handleAdd = (item) => {
@@ -47,7 +47,7 @@ const Cart = () => {
                 {product.price}
                 {' '}
                 = $
-                {product.qty * product.price}
+                {product.quantity * product.price}
               </p>
               <button
                 type="button"
@@ -86,9 +86,9 @@ const Cart = () => {
 
   return (
     <div className=' mx-5'>
-      {state.length === 0 && emptyCart()}
-      {state.length !== 0 && state.map(cartItems)}
-      {state.length !== 0 && buttons()}
+      {cart.length === 0 && emptyCart()}
+      {cart.length !== 0 && cart.map(cartItems)}
+      {cart.length !== 0 && buttons()}
     </div>
   );
 };
