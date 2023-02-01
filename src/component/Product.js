@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { NavLink, useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addCart } from '../redux/action'
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import { addCart } from '../redux/action';
 
 const Product = () => {
   const { id } = useParams();
@@ -65,9 +65,12 @@ const Product = () => {
           {product.rating && product.rating.rate}
           <span>⭐</span>
         </p>
-        <h3 className="display-6 fw-bold my-4">${product.price}</h3>
+        <h3 className="display-6 fw-bold my-4">
+          $
+          {product.price}
+        </h3>
         <p className="lead">{product.description}</p>
-        <button type="button" className="btn btn-outline-primary px-4 py-2" onClick={()=>addProduct(product)}>
+        <button type="button" className="btn btn-outline-primary px-4 py-2" onClick={() => addProduct(product)}>
           Add to Cart
         </button>
         {/* <NavLink className="btn btn-outline-primary ms-2 px-3 py-2">
