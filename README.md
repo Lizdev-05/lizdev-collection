@@ -1,5 +1,10 @@
 <a name="readme-top">Lizdev-Collection</a>
 
+<br />
+<div align="center">
+  <a href="https://github.com/Lizdev-05/lizdev-collection">
+    <img src="./assets/projectImage.png" alt="amazon-clone" width="100">
+  </a>
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
