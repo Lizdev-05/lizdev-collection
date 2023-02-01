@@ -1,12 +1,16 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { FaSearch, FaMicrophone } from 'react-icons/fa';
 import { BsFillArrowRightSquareFill, BsCart4 } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { IoMdSettings } from 'react-icons/io';
 import { Container, Navbar } from 'react-bootstrap';
+
 import './Header.css';
 
-const Header = () => (
+const Header = () => {
+const state = useSelector((state) => state.handleCart);
+return (
   <Container>
     <Navbar expand="lg" variant="dark">
       <Container className="d-flex flex-sm-row justify-content-between">
@@ -25,7 +29,7 @@ const Header = () => (
         <div className="justify-content-end text-secondary mx-4 flex-wrap buttons">
           <a href="cart" className="ms-2 btn btn-outline-dark">
             <BsCart4 className="mx-2" />
-            0
+            {state.length}
           </a>
           <a href="#cart" className="text-secondary ms-2 btn btn-outline-dark">
             Login
@@ -36,5 +40,6 @@ const Header = () => (
     </Navbar>
   </Container>
 );
+};
 
 export default Header;

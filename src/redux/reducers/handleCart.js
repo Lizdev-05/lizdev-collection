@@ -24,7 +24,11 @@ const handleCart = (state = cart, action) => {
                 return state.map((p) => p.id === product.id ? {...p, quantity: p.quantity - 1} : p);
             } break;
         default:
+            return state;
+            
 
 
         }
 }
+
+export default handleCart;
