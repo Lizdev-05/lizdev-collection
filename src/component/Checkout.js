@@ -2,6 +2,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { PaystackButton } from "react-paystack";
 
 const Checkout = () => {
   const cart = useSelector((state) => state.handleCart);
