@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 /* eslint-disable */
-import { addCart, delCart } from '../redux/action/index';
+import { addCart, delCart } from "../redux/action/index";
 
 const Cart = () => {
   const cart = useSelector((state) => state.handleCart);
@@ -41,12 +41,7 @@ const Cart = () => {
             <div className="col-md-4">
               <h3>{product.title}</h3>
               <p className="lead fw-bold">
-                {product.quantity}
-                {' '}
-                X $
-                {product.price}
-                {' '}
-                = $
+                {product.quantity} X #{product.price} = #
                 {product.quantity * product.price}
               </p>
               <button
@@ -85,7 +80,7 @@ const Cart = () => {
   );
 
   return (
-    <div className=' mx-5'>
+    <div className=" mx-5">
       {cart.length === 0 && emptyCart()}
       {cart.length !== 0 && cart.map(cartItems)}
       {cart.length !== 0 && buttons()}

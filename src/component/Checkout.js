@@ -1,20 +1,36 @@
 /* eslint-disable */
 import React from "react";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PaystackButton } from "react-paystack";
 
 const Checkout = () => {
   const cart = useSelector((state) => state.handleCart);
 
-  const price = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-
-  const publicKey = "pk_your_public_key_here";
-  const amount = 1000000; // Remember, set in kobo!
+  const publicKey = "pk_test_ff4b64a8e8b894b1adc13baa72f42d6902653531";
+  //   const amount = price;
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [amount, setAmount] = useState(0);
+
+  useEffect(() => {
+    setAmount(cart.reduce((acc, item) => acc + item.price * item.quantity, 0));
+  }, [cart]);
+
+  const componentProps = {
+    email,
+    amount: Math.ceil(amount * 100),
+    metadata: {
+      firstName,
+      lastName,
+    },
+    publicKey,
+    text: "Pay Now",
+    onSuccess: () =>
+      alert("Thanks for doing business with us! Come back soon!!"),
+    onClose: () => alert("Wait! You need this oil, don't go!!!!"),
+  };
 
   return (
     <div className="container">
@@ -50,12 +66,12 @@ const Checkout = () => {
                         </th>
                         <td>{product.title}</td>
                         <td>{product.quantity}</td>
-                        <td>${product.price}</td>
+                        <td>#{product.price}</td>
                       </tr>
                     ))}
                     <tr>
-                      <td>Total (USD)</td>
-                      <td>{price}</td>
+                      <td>Total (NGN)</td>
+                      <td>{amount}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -64,7 +80,12 @@ const Checkout = () => {
           </div>
           <div className="col-md-7 col-lg-6">
             <h4 className="mb-3">Billing address</h4>
-            <form action="" className="needs-validation" noValidate>
+            <form
+              action=""
+              onSubmit={(e) => {
+                e.preventDefault();
+              }}
+            >
               <div className="row g-3">
                 <div className="col-sm-6">
                   <label htmlFor="firstName" className="form-label">
@@ -75,7 +96,6 @@ const Checkout = () => {
                     className="form-control"
                     id="firstName"
                     placeholder=""
-                    value=""
                     required
                     onChange={(e) => setFirstName(e.target.value)}
                   />
@@ -93,7 +113,6 @@ const Checkout = () => {
                     className="form-control"
                     id="lastName"
                     placeholder=""
-                    value=""
                     required
                     onChange={(e) => setLastName(e.target.value)}
                   />
@@ -107,6 +126,7 @@ const Checkout = () => {
                   </label>
                   <input
                     type="email"
+                    value={email}
                     className="form-control"
                     id="email"
                     placeholder="you@example.com"
@@ -117,126 +137,12 @@ const Checkout = () => {
                   </div>
                 </div>
               </div>
-
               <hr className="my-4" />
 
-              <h4 className="mb-3">Payment</h4>
-
-              <div className="my-3">
-                <div className="form-check">
-                  <input
-                    id="credit"
-                    name="paymentMethod"
-                    type="radio"
-                    className="form-check-input"
-                    checked
-                    required
-                  />
-                  <label className="form-check-label" htmlFor="credit">
-                    Credit card
-                  </label>
-                </div>
-                <div className="form-check">
-                  <input
-                    id="debit"
-                    name="paymentMethod"
-                    type="radio"
-                    className="form-check-input"
-                    required
-                  />
-                  <label className="form-check-label" htmlFor="debit">
-                    Debit card
-                  </label>
-                </div>
-                <div className="form-check">
-                  <input
-                    id="paypal"
-                    name="paymentMethod"
-                    type="radio"
-                    className="form-check-input"
-                    required
-                  />
-                  <label className="form-check-label" htmlFor="paypal">
-                    PayPal
-                  </label>
-                </div>
-              </div>
-
-              <div className="row gy-3">
-                <div className="col-md-6">
-                  <label htmlFor="cc-name" className="form-label">
-                    Name on card
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="cc-name"
-                    placeholder=""
-                    required
-                  />
-                  <small className="text-muted">
-                    Full name as displayed on card
-                  </small>
-                  <div className="invalid-feedback">
-                    Name on card is required
-                  </div>
-                </div>
-
-                <div className="col-md-6">
-                  <label htmlFor="cc-number" className="form-label">
-                    Credit card number
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="cc-number"
-                    placeholder=""
-                    required
-                  />
-                  <div className="invalid-feedback">
-                    Credit card number is required
-                  </div>
-                </div>
-
-                <div className="col-md-3">
-                  <label htmlFor="cc-expiration" className="form-label">
-                    Expiration
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="cc-expiration"
-                    placeholder=""
-                    required
-                  />
-                  <div className="invalid-feedback">
-                    Expiration date required
-                  </div>
-                </div>
-
-                <div className="col-md-3">
-                  <label htmlFor="cc-cvv" className="form-label">
-                    CVV
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="cc-cvv"
-                    placeholder=""
-                    required
-                  />
-                  <div className="invalid-feedback">Security code required</div>
-                </div>
-              </div>
-
-              <hr className="my-4" />
               <PaystackButton
                 className="paystack-button w-100 btn btn-primary btn-lg"
                 {...componentProps}
               />
-              {/* <button className="w-100 btn btn-primary btn-lg" type="submit">
-                Continue to checkout
-              </button> */}
             </form>
           </div>
         </div>
