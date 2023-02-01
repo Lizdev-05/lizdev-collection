@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-import { addCart } from '../redux/action';
+import { addCart } from '../redux/action/index';
 
 const Product = () => {
   const { id } = useParams();

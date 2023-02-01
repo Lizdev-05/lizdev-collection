@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { addCart, delCart } from '../redux/action';
+import { addCart, delCart } from '../redux/action/index';
 
 const Cart = () => {
   const state = useSelector((state) => state.handleCart);
