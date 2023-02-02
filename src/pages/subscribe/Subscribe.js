@@ -25,7 +25,7 @@ const Subscribe = () => {
 
     const plandata = {
       name: plan,
-      amount: price,
+      amount: price * 100,
       interval,
     };
     try {
