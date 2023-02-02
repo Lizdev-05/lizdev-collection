@@ -1,9 +1,17 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
-/* eslint-disable */
-import { addCart, delCart } from "../../redux/action";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+
+const addCart = (product) => ({
+  type: "ADD_ITEM_TO_CART",
+  payload: product,
+});
+
+const delCart = (product) => ({
+  type: "DELETE_ITEM",
+  payload: product,
+});
 
 const Cart = () => {
   const cart = useSelector((state) => state.handleCart);
