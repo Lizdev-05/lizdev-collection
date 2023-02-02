@@ -1,15 +1,15 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
 const addCart = (product) => ({
-  type: "ADD_ITEM_TO_CART",
+  type: 'ADD_ITEM_TO_CART',
   payload: product,
 });
 
 const delCart = (product) => ({
-  type: "DELETE_ITEM",
+  type: 'DELETE_ITEM',
   payload: product,
 });
 
@@ -49,7 +49,12 @@ const Cart = () => {
             <div className="col-md-4">
               <h3>{product.title}</h3>
               <p className="lead fw-bold">
-                {product.quantity} X #{product.price} = #
+                {product.quantity}
+                {' '}
+                X #
+                {product.price}
+                {' '}
+                = #
                 {product.quantity * product.price}
               </p>
               <button
