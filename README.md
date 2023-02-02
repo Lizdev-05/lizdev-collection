@@ -5,6 +5,8 @@
   <a href="https://github.com/Lizdev-05/lizdev-collection">
     <img src="./assets/projectImage.png" alt="amazon-clone" width="100">
   </a>
+<br/>
+
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -34,8 +36,7 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<details>
-  <summary>Client</summary>
+  
   **Main Technologies:**
 
 - ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
