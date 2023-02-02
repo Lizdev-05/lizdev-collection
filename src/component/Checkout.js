@@ -8,7 +8,6 @@ const Checkout = () => {
   const cart = useSelector((state) => state.handleCart);
 
   const publicKey = "pk_test_ff4b64a8e8b894b1adc13baa72f42d6902653531";
-  //   const amount = price;
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
