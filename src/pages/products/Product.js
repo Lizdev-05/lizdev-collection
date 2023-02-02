@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-/* eslint-disable */
-// import { addCart } from "../../redux/action";
 
-const addCart = (product) => ({
-  type: "ADD_ITEM_TO_CART",
+export const addCart = (product) => ({
+  type: 'ADD_ITEM_TO_CART',
   payload: product,
 });
 
@@ -59,8 +57,8 @@ const Product = () => {
         <img
           src={product.image}
           alt={product.title}
-          height="400px"
-          width="400px"
+          height="350px"
+          width="350px"
         />
       </div>
       <div className="col-md-6">
@@ -71,7 +69,10 @@ const Product = () => {
           {product.rating && product.rating.rate}
           <span>⭐</span>
         </p>
-        <h3 className="display-6 fw-bold my-4">#{product.price}</h3>
+        <h3 className="display-6 fw-bold my-4">
+          #
+          {product.price}
+        </h3>
         <p className="lead">{product.description}</p>
         <button
           type="button"
@@ -80,9 +81,6 @@ const Product = () => {
         >
           Add to Cart
         </button>
-        {/* <NavLink className="btn btn-outline-primary ms-2 px-3 py-2">
-          Go to Cart
-        </NavLink> */}
       </div>
     </>
   );

@@ -1,7 +1,8 @@
+// import * as dotenv from "dotenv";
+// dotenv.config();
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-// import '../node_modules/font-awesome/css/font-awesome.min.css';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';

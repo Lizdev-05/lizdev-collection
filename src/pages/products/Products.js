@@ -76,10 +76,10 @@ const Products = () => {
       </div>
       {filter.map((data) => (
         <>
-          <div className="col-md-3 mb-4">
+          <div className="col-md-3 mb-4 d-flex justify-content-center align-items-center">
             <Card
               style={{ width: '18rem' }}
-              className="h-100 text-center p-4"
+              className="h-100 text-center p-4 "
               key="{data.id}"
             >
               <Card.Img
@@ -115,9 +115,7 @@ const Products = () => {
 
   return (
     <div className="container my-5 py-5">
-      <div className="row justify-content-center">
-        {loading ? <Loading /> : <ShowProducts />}
-      </div>
+      <div className="row">{loading ? <Loading /> : <ShowProducts />}</div>
     </div>
   );
 };
