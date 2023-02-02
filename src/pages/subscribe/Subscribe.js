@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
+console.log(process.env);
 const Subscribe = () => {
   const [email, setEmail] = useState("");
   const [price, setPrice] = useState("");
@@ -24,15 +25,14 @@ const Subscribe = () => {
 
     const plandata = {
       name: plan,
-      amount: Math.ceil(price * 100),
+      amount: price,
       interval,
     };
     try {
       const response = await fetch(createPlanEndpoint, {
         method: "POST",
         headers: {
-          Authorization:
-            "Bearer sk_test_dc7ea68e6119c26d119a9bec45d120737bfb5694",
+          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(plandata),
@@ -59,8 +59,7 @@ const Subscribe = () => {
       const response = await fetch(subscribeEndpoint, {
         method: "POST",
         headers: {
-          Authorization:
-            "Bearer sk_test_dc7ea68e6119c26d119a9bec45d120737bfb5694",
+          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(subscribeData),
@@ -91,6 +90,7 @@ const Subscribe = () => {
               />
             </div>
             <br />
+            <span className="text-muted">Plan start from #10,000</span>
             <div className="form-group">
               <input
                 type="number"
