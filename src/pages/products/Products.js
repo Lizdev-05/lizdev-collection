@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Card, Button } from "react-bootstrap";
-import SkeletonLoader from "../../component/header/Loader";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Card, Button } from 'react-bootstrap';
+import SkeletonLoader from '../../component/header/Loader';
 
 const Products = () => {
   const [product, setProduct] = useState([]);
@@ -12,7 +12,7 @@ const Products = () => {
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      const response = await fetch("https://fakestoreapi.com/products");
+      const response = await fetch('https://fakestoreapi.com/products');
       if (componentMounted) {
         setProduct(await response.clone().json());
         setFilter(await response.json());
@@ -62,14 +62,14 @@ const Products = () => {
         <button
           type="button"
           className="btn btn-outline-primary me-2"
-          onClick={() => filterProduct("jewelery")}
+          onClick={() => filterProduct('jewelery')}
         >
           Jewelry
         </button>
         <button
           type="button"
           className="btn btn-outline-primary me-2"
-          onClick={() => filterProduct("electronics")}
+          onClick={() => filterProduct('electronics')}
         >
           Electronics
         </button>
@@ -78,7 +78,7 @@ const Products = () => {
         <>
           <div className="col-md-3 mb-4">
             <Card
-              style={{ width: "18rem" }}
+              style={{ width: '18rem' }}
               className="h-100 text-center p-4"
               key="{data.id}"
             >
@@ -92,7 +92,10 @@ const Products = () => {
                   {data.title.substring(0, 12)}
                   ...
                 </Card.Title>
-                <Card.Text className="lead fw-bold">#{data.price}</Card.Text>
+                <Card.Text className="lead fw-bold">
+                  #
+                  {data.price}
+                </Card.Text>
                 <Link to={`/products/${data.id}`}>
                   <Button
                     type="button"
