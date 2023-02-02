@@ -3,6 +3,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { PaystackButton } from "react-paystack";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Checkout = () => {
   const cart = useSelector((state) => state.handleCart);
@@ -27,8 +29,10 @@ const Checkout = () => {
     publicKey,
     text: "Pay Now",
     onSuccess: () =>
-      alert("Thanks for doing business with us! Come back soon!!"),
-    onClose: () => alert("Wait! You need this oil, don't go!!!!"),
+      // alert("Thanks for doing business with us! Come back soon!!"),
+      toast.success("Thanks for doing business with us! Come back soon!!"),
+    // onClose: () => alert("Wait! You need this oil, don't go!!!!"),
+    onClose: () => toast.error("Wait! You need this product, don't go!!!!"),
   };
 
   return (
