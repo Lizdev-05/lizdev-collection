@@ -1,12 +1,12 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { FaSearch, FaMicrophone } from 'react-icons/fa';
-import { BsFillArrowRightSquareFill, BsCart4 } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
-import { IoMdSettings } from 'react-icons/io';
-import { Container, Navbar } from 'react-bootstrap';
+import React from "react";
+import { useSelector } from "react-redux";
+import { FaSearch, FaMicrophone } from "react-icons/fa";
+import { BsFillArrowRightSquareFill, BsCart4 } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { IoMdSettings } from "react-icons/io";
+import { Container, Navbar } from "react-bootstrap";
 
-import './Header.css';
+import "./Header.css";
 
 const Header = () => {
   const state = useSelector((state) => state.handleCart);
@@ -33,13 +33,13 @@ const Header = () => {
               <BsCart4 className="mx-2" />
               {state.length}
             </Link>
-            <a
-              href="/cart"
+            <Link
+              to="/subscribe"
               className="text-secondary ms-2 btn btn-outline-dark"
             >
-              Login
+              Subscribe
               <BsFillArrowRightSquareFill className="mx-2" />
-            </a>
+            </Link>
           </div>
         </Container>
       </Navbar>
