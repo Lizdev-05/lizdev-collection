@@ -33,13 +33,13 @@ const Header = () => {
               <BsCart4 className="mx-2" />
               {state.length}
             </Link>
-            <a
-              href="/cart"
+            <Link
+              to="/subscribe"
               className="text-secondary ms-2 btn btn-outline-dark"
             >
-              Login
+              Subscribe
               <BsFillArrowRightSquareFill className="mx-2" />
-            </a>
+            </Link>
           </div>
         </Container>
       </Navbar>
