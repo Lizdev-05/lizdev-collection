@@ -1,9 +1,8 @@
 /* eslint-disable */
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 
-console.log(process.env);
 const Subscribe = () => {
   const [email, setEmail] = useState("");
   const [price, setPrice] = useState("");
@@ -11,12 +10,6 @@ const Subscribe = () => {
   const [plan, setPlan] = useState("");
   const [subscribeResponse, setSubscribeResponse] = useState("");
   const [interval, setInterval] = useState("");
-  const [secretKey, setSecretKey] = useState("");
-
-  useEffect(() => {
-    const secretKey = process.env.API_KEY;
-    setSecretKey(secretKey);
-  }, []);
 
   async function createPlan(e) {
     e.preventDefault();
@@ -25,14 +18,15 @@ const Subscribe = () => {
 
     const plandata = {
       name: plan,
-      amount: price * 100,
+      amount: price,
       interval,
     };
     try {
       const response = await fetch(createPlanEndpoint, {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+          Authorization:
+           `Bearer ${process.env.REACT_APP_API_KEY}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(plandata),
@@ -59,7 +53,8 @@ const Subscribe = () => {
       const response = await fetch(subscribeEndpoint, {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+          Authorization:
+            `Bearer ${process.env.REACT_APP_API_KEY}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(subscribeData),
@@ -154,6 +149,22 @@ const Subscribe = () => {
               </div>
             </div>
           </div>
+          {/* <div className="mt-3">
+            <h3>Subscribe Response</h3>
+            <ul className="list-group">
+              {subscribeResponse.data && (
+                <li className="list-group-item">
+                  <p>
+                    Authorization URL:{" "}
+                    {subscribeResponse.data.authorization_url}
+                  </p>
+                  <p>Access Code: {subscribeResponse.data.access_code}</p>
+                  <p>Reference: {subscribeResponse.data.reference}</p>
+                </li>
+              )} */}
+          {/* <li className="list-group-item">{subscribeResponse}</li> */}
+          {/* </ul>
+          </div> */}
         </div>
       </div>
     </div>
