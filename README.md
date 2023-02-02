@@ -57,7 +57,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://visionary-eclair-eaf65a.netlify.app)
+- [Live Demo Link](Coming soon)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -148,7 +148,8 @@ If you like this project please give it a ⭐️!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for giving me the opportunity to learn and grow as a developer.
+I would like to thank [Microverse](https://www.microverse.org/)for giving me the opportunity to learn and grow as a developer.
+Also, I would like to appreciate [Alvative](https://alvative.com/) for this take home assignment which has enabled me to learn more.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
