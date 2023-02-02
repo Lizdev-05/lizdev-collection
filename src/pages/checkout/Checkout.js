@@ -6,6 +6,8 @@ import { PaystackButton } from "react-paystack";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+console.log(process.env);
+
 const Checkout = () => {
   const cart = useSelector((state) => state.handleCart);
 
