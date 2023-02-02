@@ -149,22 +149,6 @@ const Subscribe = () => {
               </div>
             </div>
           </div>
-          {/* <div className="mt-3">
-            <h3>Subscribe Response</h3>
-            <ul className="list-group">
-              {subscribeResponse.data && (
-                <li className="list-group-item">
-                  <p>
-                    Authorization URL:{" "}
-                    {subscribeResponse.data.authorization_url}
-                  </p>
-                  <p>Access Code: {subscribeResponse.data.access_code}</p>
-                  <p>Reference: {subscribeResponse.data.reference}</p>
-                </li>
-              )} */}
-          {/* <li className="list-group-item">{subscribeResponse}</li> */}
-          {/* </ul>
-          </div> */}
         </div>
       </div>
     </div>
