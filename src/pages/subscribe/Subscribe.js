@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const Subscribe = () => {
   const [email, setEmail] = useState("");
@@ -17,7 +18,7 @@ const Subscribe = () => {
 
     const plandata = {
       name: plan,
-      amount: price,
+      amount: Math.ceil(price * 100),
       interval,
     };
     try {
@@ -33,9 +34,10 @@ const Subscribe = () => {
 
       const data = await response.json();
       setPlanResponse(data.data);
+      toast.success("Plan Created Successfully.");
       return data;
     } catch (error) {
-      console.log(error);
+      toast.error("Plan Creation Failed.");
     }
   }
 
@@ -59,64 +61,110 @@ const Subscribe = () => {
       });
       const data = await response.json();
       setSubscribeResponse(data);
+      toast.success("Subscription Successful");
+      return data;
     } catch (error) {
-      console.log(error);
+      toast.error("Subscription Failed");
     }
   }
 
   return (
-    <div>
-      <h1>Subscribe</h1>
-      <form>
-        <input
-          type="text"
-          placeholder="Plan"
-          onChange={(e) => setPlan(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="Price"
-          onChange={(e) => setPrice(e.target.value)}
-        />
-        <label>Select Interval</label>
-        <input
-          type="radio"
-          name="interval"
-          value="monthly"
-          onChange={(e) => setInterval(e.target.value)}
-        />
-        Monthly
-        <input
-          type="radio"
-          name="interval"
-          value="daily"
-          onChange={(e) => setInterval(e.target.value)}
-        />
-        Daily
-        <button onClick={createPlan}>Create Plan</button>
-      </form>
+    <div className="container">
+      <div className="row g-5">
+        <div className="col-md-7 col-lg-6 ">
+          <h1 className="mb-3 d-flex justify-content-between align-items-center">
+            Subscribe
+          </h1>
+          <form className="">
+            <div className="form-group ">
+              <input
+                type="text"
+                placeholder="Plan"
+                className="form-control"
+                onChange={(e) => setPlan(e.target.value)}
+              />
+            </div>
+            <br />
+            <div className="form-group">
+              <input
+                type="number"
+                placeholder="Price"
+                className="form-control"
+                onChange={(e) => setPrice(e.target.value)}
+              />
+            </div>
 
-      <form>
-        <input
-          type="text"
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <button onClick={createSubscribe}>Subscribe</button>
-      </form>
+            <div className="form-group">
+              <label>Select Interval</label>
+              <div className="form-check form-check-inline">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="interval"
+                  value="monthly"
+                  onChange={(e) => setInterval(e.target.value)}
+                />
+                <label className="form-check-label">Monthly</label>
+              </div>
+              <div className="form-check form-check-inline">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="interval"
+                  value="daily"
+                  onChange={(e) => setInterval(e.target.value)}
+                />
+                <label className="form-check-label">Daily</label>
+              </div>
+            </div>
+            <button className="btn btn-primary" onClick={createPlan}>
+              Create Plan
+            </button>
+          </form>
 
-      <div>
-        <h3>Plan Response</h3>
-        <h2>
-          Name:
-          {planResponse.name}
-        </h2>
-        {/* <h2>Amount: {planResponse.amount}</h2>
-        <h2>Plan Code : {planResponse.plan_code}</h2> */}
-      </div>
-      <div>
-        <h3>Subscribe Response</h3>
-        {/* <p>{subscribeResponse}</p> */}
+          <form className="mt-3">
+            <div className="form-group">
+              <input
+                type="text"
+                placeholder="Email"
+                className="form-control"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <button className="btn btn-primary" onClick={createSubscribe}>
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+        <div className="col-md-5 col-lg-6 order-md-last">
+          <div className="mt-3">
+            <h3>Plan Response</h3>
+            <div className="card">
+              <div className="card-body">
+                <h2 className="card-title">Name: {planResponse.name}</h2>
+                <p>Amount: {planResponse.amount}</p>
+                <p>Plan Code: {planResponse.plan_code}</p>
+              </div>
+            </div>
+          </div>
+          {/* <div className="mt-3">
+            <h3>Subscribe Response</h3>
+            <ul className="list-group">
+              {subscribeResponse.data && (
+                <li className="list-group-item">
+                  <p>
+                    Authorization URL:{" "}
+                    {subscribeResponse.data.authorization_url}
+                  </p>
+                  <p>Access Code: {subscribeResponse.data.access_code}</p>
+                  <p>Reference: {subscribeResponse.data.reference}</p>
+                </li>
+              )} */}
+          {/* <li className="list-group-item">{subscribeResponse}</li> */}
+          {/* </ul>
+          </div> */}
+        </div>
       </div>
     </div>
   );
