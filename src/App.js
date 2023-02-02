@@ -1,11 +1,11 @@
 /* eslint-disable */
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Cart from "./component/Cart";
+import Cart from "./pages/cart/Cart";
 import Header from "./component/header/Header";
-import Products from "./component/Products";
-import Product from "./component/Product";
-import Checkout from "./component/Checkout";
+import Products from "./pages/products/Products";
+import Product from "./pages/products/Product";
+import Checkout from "./pages/checkout/Checkout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
