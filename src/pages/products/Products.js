@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
-import SkeletonLoader from './header/Loader';
+import SkeletonLoader from '../../component/header/Loader';
 
 const Products = () => {
   const [product, setProduct] = useState([]);

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 /* eslint-disable */
-import { addCart, delCart } from "../redux/action/index";
+import { addCart, delCart } from "../../redux/action/index";
 
 const Cart = () => {
   const cart = useSelector((state) => state.handleCart);

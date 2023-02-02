@@ -3,12 +3,13 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { PaystackButton } from "react-paystack";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Checkout = () => {
   const cart = useSelector((state) => state.handleCart);
 
   const publicKey = "pk_test_ff4b64a8e8b894b1adc13baa72f42d6902653531";
-  //   const amount = price;
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -28,8 +29,8 @@ const Checkout = () => {
     publicKey,
     text: "Pay Now",
     onSuccess: () =>
-      alert("Thanks for doing business with us! Come back soon!!"),
-    onClose: () => alert("Wait! You need this oil, don't go!!!!"),
+      toast.success("Thanks for doing business with us! Come back soon!!"),
+    onClose: () => toast.error("Wait! You need this product, don't go!!!!"),
   };
 
   return (
@@ -39,7 +40,9 @@ const Checkout = () => {
           <div className="col-md-7 col-lg-6 order-md-last">
             <h4 className="d-flex justify-content-between align-items-center mb-3">
               <span className="text-primary">Your cart</span>
-              <span className="badge bg-primary rounded-pill">3</span>
+              <span className="badge bg-primary rounded-pill">
+                {cart.length}
+              </span>
             </h4>
 
             <ul className="list-group mb-3">
