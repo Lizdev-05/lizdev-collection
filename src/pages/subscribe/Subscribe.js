@@ -26,7 +26,7 @@ const Subscribe = () => {
         method: "POST",
         headers: {
           Authorization:
-           `Bearer ${process.env.REACT_APP_API_KEY}`,
+           "Bearer sk_test_dc7ea68e6119c26d119a9bec45d120737bfb5694",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(plandata),
@@ -54,7 +54,7 @@ const Subscribe = () => {
         method: "POST",
         headers: {
           Authorization:
-            `Bearer ${process.env.REACT_APP_API_KEY}`,
+            Bearer sk_test_dc7ea68e6119c26d119a9bec45d120737bfb5694",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(subscribeData),
