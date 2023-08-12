@@ -1,4 +1,6 @@
-<a name="readme-top">Lizdev-Collection</a>
+# Project Name
+
+Lizdev-Collection
 
 <br />
 <div align="center">
@@ -28,13 +30,20 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 Crown Store <a name="about-project"></a>
+# Description of the project.
 
-**Lizdev Collection** is a full-stack e-commerce web application built with React, Redux, and Paystack. It is a fully functional e-commerce website that allows users to browse products, add products to cart, and checkout. It also allows users to make payments using Paystack.
+Lizdev Collection** is a full-stack e-commerce web application built with React, Redux, and Paystack. It is a fully functional e-commerce website that allows users to browse products, add products to a cart, and checkout. It also allows users to make payments using Paystack.
 
-## 🛠 Built With <a name="built-with"></a>
+## 🛠 Built With
+- Languages:
+  _**Javascript**_
 
-### Tech Stack <a name="tech-stack"></a>
+- Frameworks:
+  _**React Js**_
+  _**Tailwind Css**_
+- Technologies used: _**Visual Studio Code**_
+
+### Tech Stack
 
 **Main Technologies:**
 
@@ -42,13 +51,12 @@
 - ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 - ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 
-### Key Features <a name="key-features"></a>
-
+### Key Features 
 - **It allows users to browse products.**
-- **It allows users to add products to cart.**
-- **It allows users to add products to cart.**
+- **It allows users to add products to a cart.**
+- **It allows users to add products to a cart.**
 - **It allows users to checkout their order.**
-- **It allows users to make payment with paystack.**
+- **It allows users to make payments with Paystack.**
 - **Users can create a plan and also subscribe.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -73,8 +81,8 @@ In order to run this project you need:
 
 - Enter this url: [https://github.com/Lizdev-05/lizdev-collection](https://github.com/Lizdev-05/lizdev-collection) in your web browser.
 - Once opened navigate to the top left level of the project a green code download button will be visible on the righthand side.
-- Select download Zip option from drop down menu.
-- Once the download is complete you will be able to access my project locally .
+- Select the download Zip option from the drop-down menu.
+- Once the download is complete you will be able to access my project locally.
 
 ### Install
 
