@@ -4,7 +4,7 @@ Lizdev-Collection
 
 <br />
 <div align="center">
-  <a href="https://github.com/Lizdev-05/lizdev-collection">
+  <a href="https://lizdev-collection.vercel.app/">
     <img src="./assets/projectImage.png" alt="amazon-clone" width="100">
   </a>
 <br/>
@@ -63,7 +63,7 @@ Lizdev Collection** is a full-stack e-commerce web application built with React,
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](Coming soon)
+- [https://lizdev-collection.vercel.app/](Live Demo)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
